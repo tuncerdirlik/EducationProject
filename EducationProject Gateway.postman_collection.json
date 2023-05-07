@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "38862125-210c-4753-8af6-c833234778b6",
+		"name": "EducationProject Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Education Groups",
+			"item": [
+				{
+					"name": "Get All Education Groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5119/services/educationgroups/educationgroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educationgroups",
+								"educationgroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Education Groups By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5119/services/educationgroups/educationgroup/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educationgroups",
+								"educationgroup",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Education Group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"test 4\",\r\n  \"startDate\": \"2023-05-06\",\r\n  \"endDate\": \"2023-05-07\",\r\n  \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5119/services/educationgroups/educationgroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educationgroups",
+								"educationgroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Education Group",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"2\",\r\n  \"title\": \"test 5aaa\",\r\n  \"startDate\": \"2023-05-07\",\r\n  \"endDate\": \"2023-05-11\",\r\n  \"status\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5119/services/educationgroups/educationgroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educationgroups",
+								"educationgroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Education Group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5119/services/educationgroups/educationgroup/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educationgroups",
+								"educationgroup",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Educations",
+			"item": [
+				{
+					"name": "Get All Educations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5119/services/educations/education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educations",
+								"education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Education",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"educationGroupId\": 1,\r\n  \"title\": \"test 3\",\r\n  \"description\": \"test \",\r\n  \"link\": \"youtube.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5119/services/educations/education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educations",
+								"education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Education",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"educationGroupId\": 2,\r\n    \"title\": \"test 2\",\r\n    \"description\": \"test xxxxxx\",\r\n    \"link\": \"youtube.comxxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5119/services/educations/education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educations",
+								"education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Education",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5119/services/educations/education/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educations",
+								"education",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Education By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"test 2\",\r\n  \"startDate\": \"2023-05-06\",\r\n  \"endDate\": \"2023-05-07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5119/services/educations/education/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5119",
+							"path": [
+								"services",
+								"educations",
+								"education",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

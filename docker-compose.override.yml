@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  educationprojectdb:
+    container_name: educationprojectdb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - educationprojectdb_volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=Password123*
+  rediscachedb:
+    container_name: rediscachedb
+    restart: always
+    ports:
+      - "6379:6379"
+  educationgroup.api:
+    container_name: educationgroup.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RedisSettings:Host=rediscachedb
+      - ConnectionStrings:EducationGroupServiceConnectionString=User ID=admin;Password=Password123*;Server=educationprojectdb;Port=5432;Database=educationgroupdb;Integrated Security=true;Pooling=true
+    ports:
+      - "5068:80"
+    depends_on:
+      - educationprojectdb
+      - rediscachedb
+
+  education.api:
+    container_name: education.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RedisSettings:Host=rediscachedb
+      - ConnectionStrings:EducationServiceConnectionString=User ID=admin;Password=Password123*;Server=educationprojectdb;Port=5432;Database=educationdb;Integrated Security=true;Pooling=true
+    ports:
+      - "5285:80"
+    depends_on:
+      - educationprojectdb
+      - rediscachedb
+
+  gateway.api:
+    container_name: gateway.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    ports:
+      - "5119:80"

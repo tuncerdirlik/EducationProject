@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  educationprojectdb:
+    image: postgres
+  rediscachedb:
+    image: redis
+  educationgroup.api:
+    image: educationgroup_api_image
+    build:
+      context: .
+      dockerfile: src/MicroServices/EducationGroupMicroService/EducationGroupMicroService.Api/Dockerfile
+  education.api:
+    image: education_api_image
+    build:
+      context: .
+      dockerfile: src/MicroServices/EducationMicroService/EducationMicroService.Api/Dockerfile
+  gateway.api:
+    image: gateway_api_image
+    build:
+      context: .
+      dockerfile: src/Gateways/Gateway/Dockerfile
+volumes:
+  educationprojectdb_volume:
+
+
